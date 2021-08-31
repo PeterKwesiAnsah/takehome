@@ -12,9 +12,9 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<QueryClientProvider client={QueryClient}>
-				<BrowserRouter>
+				<Router>
 					<App />
-				</BrowserRouter>
+				</Router>
 			</QueryClientProvider>
 		</Provider>
 	</React.StrictMode>,
