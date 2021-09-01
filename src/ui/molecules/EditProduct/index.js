@@ -26,7 +26,6 @@ const Index = ({ propValue, type, label, productID, priceID }) => {
 					setValue(target.value);
 				}}
 				type={type}
-				// helperText="Name cant be blank"
 			/>
 			<div className="product--actions">
 				<span

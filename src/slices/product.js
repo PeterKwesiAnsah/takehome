@@ -1,5 +1,5 @@
 import { createSlice, current } from '@reduxjs/toolkit';
-
+import { v4 as uuidv4 } from 'uuid';
 export const productSlice = createSlice({
 	name: 'products',
 	initialState: {
@@ -22,14 +22,25 @@ export const productSlice = createSlice({
 				return;
 			}
 			const findPrice = findProduct.prices.find(
-				(price) => Number(price.id) === Number(priceID)
+				(price) => String(price.id) === String(priceID)
 			);
 			findPrice.price = Number(value);
 			findPrice.date = new Date().toISOString();
 			console.log(current(findPrice));
 		},
+		newPrice(state, action) {
+			const {
+				payload: { id, value },
+			} = action;
+			const price = Number(value);
+			const date = new Date().toISOString();
+			console.log(id, value);
+			const findProduct = state.data.find((product) => product.id === id);
+			findProduct.prices.push({ id: uuidv4(), price, date });
+		},
 	},
 });
 
-export const { addAPIProducts, editProductDetail } = productSlice.actions;
+export const { addAPIProducts, editProductDetail, newPrice } =
+	productSlice.actions;
 export default productSlice.reducer;
