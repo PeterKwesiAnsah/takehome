@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import EditProduct from '../../ui/molecules/EditProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
@@ -27,6 +27,9 @@ const Product = () => {
 	return (
 		<div className="product">
 			{/* <span>PRODUCT ID:{productID}</span> */}
+			<Link to="/">
+				<Button>Go Home</Button>
+			</Link>
 			<EditProduct
 				propValue={productDetails.name}
 				label={'Product Name'}

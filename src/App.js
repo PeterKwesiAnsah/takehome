@@ -17,8 +17,6 @@ const App = () => {
 	const { pathname } = window.location;
 	const protectRoutes =
 		pathname !== '/' || (pathname !== '/' && storeProducts.length === 0);
-	console.log(protectRoutes);
-	console.log(pathname);
 	return (
 		<div className="App">
 			<QueryClientProvider client={queryClient}>
