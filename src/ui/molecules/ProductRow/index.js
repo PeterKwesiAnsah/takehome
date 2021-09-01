@@ -13,11 +13,14 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CreateIcon from '@material-ui/icons/Create';
+import { sortPrices } from '../../../utils';
 import { Link } from 'react-router-dom';
 
 const Index = (props) => {
 	const { row } = props;
 	const [open, setOpen] = React.useState(false);
+	let sorteDates = sortPrices(row.prices ?? []);
+	console.log(sorteDates);
 	const useRowStyles = makeStyles({
 		root: {
 			'& > *': {
@@ -69,7 +72,7 @@ const Index = (props) => {
 									</TableRow>
 								</TableHead>
 								<TableBody>
-									{row.prices.map(({ id, price, date }) => (
+									{sortPrices(row.prices).map(({ id, price, date }) => (
 										<TableRow key={id}>
 											<TableCell component="th" scope="row">
 												{new Date(date).toDateString()}

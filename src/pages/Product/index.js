@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { newPrice } from '../../slices/product';
+import { sortPrices } from '../../utils/index';
 
 import './index.css';
 
@@ -24,7 +25,9 @@ const Product = () => {
 		setAddNewPrice(false);
 	};
 
-	console.log(productDetails);
+
+
+
 	return (
 		<div className="product">
 			<span>PRODUCT ID:{productID}</span>
