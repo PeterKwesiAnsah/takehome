@@ -1,8 +1,14 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-const Index = ({ propValue, type, label }) => {
+import { editProductDetail } from '../../../slices/product';
+import { useDispatch } from 'react-redux';
+const Index = ({ propValue, type, label, productID, priceID }) => {
 	const [allowEdit, setAllowEdit] = React.useState(true);
 	const [value, setValue] = React.useState(propValue);
+	const dispatch = useDispatch();
+	const handleSave = () => {
+		dispatch(editProductDetail({ id: productID, value, priceID }));
+	};
 	return (
 		<div className="product--Name">
 			<TextField
@@ -35,6 +41,7 @@ const Index = ({ propValue, type, label }) => {
 					className="product--action product--action--save"
 					onClick={() => {
 						setAllowEdit(true);
+						handleSave();
 					}}
 				>
 					save

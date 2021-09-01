@@ -1,12 +1,13 @@
 import React from 'react';
 import { addAPIProducts } from '../../../slices/product.js';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductsTable from '../../molecules/ProductsTable';
 
 const Index = ({ products }) => {
 	const dispatch = useDispatch();
+	const storeProducts = useSelector((state) => state.products);
 	React.useEffect(() => {
-		dispatch(addAPIProducts(products));
+		if (!storeProducts.data.length) dispatch(addAPIProducts(products));
 	}, []);
 	return (
 		<>

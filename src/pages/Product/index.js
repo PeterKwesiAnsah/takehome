@@ -20,12 +20,16 @@ const Product = () => {
 				propValue={productDetails.name}
 				label={'Product Name'}
 				type="text"
+				productID={productDetails.id}
 			/>
 			{productDetails.prices.map(({ id, price }) => (
 				<EditProduct
 					propValue={price}
 					label={'Product ID ' + id}
 					type="number"
+					productID={productDetails.id}
+					key={id}
+					priceID={id}
 				/>
 			))}
 		</div>

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 export const productSlice = createSlice({
 	name: 'products',
@@ -14,9 +14,19 @@ export const productSlice = createSlice({
 		},
 		editProductDetail(state, action) {
 			const {
-				payload: { type, value, id },
+				payload: { priceID, value, id },
 			} = action;
-			console.log(type, value, id);
+			const findProduct = state.data.find((product) => product.id === id);
+			if (!priceID) {
+				findProduct.name = value;
+				return;
+			}
+			const findPrice = findProduct.prices.find(
+				(price) => Number(price.id) === Number(priceID)
+			);
+			findPrice.price = Number(value);
+			findPrice.date = new Date().toISOString();
+			console.log(current(findPrice));
 		},
 	},
 });
