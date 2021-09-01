@@ -51,7 +51,7 @@ export const productSlice = createSlice({
 
 			state.data.push(newProduct);
 
-			console.log(newProduct);
+			// console.log(newProduct);
 		},
 	},
 });

@@ -12,7 +12,7 @@ import './index.css';
 
 export default function CollapsibleTable() {
 	const rows = useSelector((state) => state.products.data);
-	console.log(rows);
+	// console.log(rows);
 	return (
 		<TableContainer component={Paper}>
 			<Table aria-label="collapsible table">
