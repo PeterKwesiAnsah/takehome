@@ -13,8 +13,10 @@ const Index = () => {
 		// console.log(e)
 		e.preventDefault();
 		const { price, name } = e.target;
-		dispatch(createProduct({ price: price.value, name: name.value }));
-		history.push('/');
+		if (price.value.length > 0 && name.value.length > 0) {
+			dispatch(createProduct({ price: price.value, name: name.value }));
+			history.push('/');
+		}
 	};
 	return (
 		<form className="createProduct--form" onSubmit={handleCreateProduct}>
