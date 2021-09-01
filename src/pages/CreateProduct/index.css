@@ -1,0 +1,7 @@
+.createProduct--form {
+	width: 100%;
+	display: grid;
+	place-items: center;
+	grid-auto-flow: row;
+	gap: 40px;
+}

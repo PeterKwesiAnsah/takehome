@@ -13,7 +13,7 @@ const Index = ({ products }) => {
 	}, []);
 	return (
 		<>
-			<Link to="/createAccount">
+			<Link to="/createProduct">
 				<Button variant="contained" color="primary" type="submit">
 					add a product
 				</Button>

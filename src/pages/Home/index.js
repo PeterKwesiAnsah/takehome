@@ -2,7 +2,6 @@ import React from 'react';
 import Loader from '../../ui/atoms/Loader';
 import Error from '../../ui/atoms/Error';
 import Products from '../../ui/organisms/Products';
-
 import { useQuery } from 'react-query';
 
 const Index = () => {
@@ -16,7 +15,7 @@ const Index = () => {
 		return <Error></Error>;
 	}
 
-	return <Products products={data}>data</Products>;
+	return <Products products={data}></Products>;
 };
 
 export default Index;

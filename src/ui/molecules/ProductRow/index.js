@@ -41,7 +41,7 @@ const Index = (props) => {
 					</IconButton>
 				</TableCell>
 				<TableCell component="th" scope="row" align="left">
-					{row.id}
+					{props.rowIdx}
 				</TableCell>
 				<TableCell align="left">{row.name}</TableCell>
 				<TableCell>
@@ -77,7 +77,7 @@ const Index = (props) => {
 											</TableCell>
 											<TableCell>{price}</TableCell>
 											<TableCell align="center">{row.name}</TableCell>
-											<TableCell align="center">{row.id}</TableCell>
+											<TableCell align="center">{props.rowIdx}</TableCell>
 										</TableRow>
 									))}
 								</TableBody>

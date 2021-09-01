@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { newPrice } from '../../slices/product';
 
-
 import './index.css';
 
 const Product = () => {
@@ -15,7 +14,7 @@ const Product = () => {
 	const [addNewPrice, setAddNewPrice] = useState(false);
 	const dispatch = useDispatch();
 	const productDetails = storeProducts.data.find(
-		({ id }) => Number(id) === Number(productID)
+		({ id }) => String(id) === String(productID)
 	);
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -25,12 +24,9 @@ const Product = () => {
 		setAddNewPrice(false);
 	};
 
-
-
-
 	return (
 		<div className="product">
-			<span>PRODUCT ID:{productID}</span>
+			{/* <span>PRODUCT ID:{productID}</span> */}
 			<EditProduct
 				propValue={productDetails.name}
 				label={'Product Name'}

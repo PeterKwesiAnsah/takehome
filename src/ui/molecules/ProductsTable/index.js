@@ -25,8 +25,8 @@ export default function CollapsibleTable() {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{rows.map((row) => (
-						<Row key={row.name} row={row} />
+					{rows.map((row, index) => (
+						<Row key={row.name} row={row} rowIdx={index + 1} />
 					))}
 				</TableBody>
 			</Table>

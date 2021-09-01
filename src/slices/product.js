@@ -37,9 +37,25 @@ export const productSlice = createSlice({
 			const findProduct = state.data.find((product) => product.id === id);
 			findProduct.prices.push({ id: uuidv4(), price, date });
 		},
+		createProduct(state, action) {
+			let {
+				payload: { price, name },
+			} = action;
+			price = Number(price);
+			const date = new Date().toISOString();
+			const newProduct = {
+				id: uuidv4(),
+				name,
+				prices: [{ id: uuidv4(), price, date }],
+			};
+
+			state.data.push(newProduct);
+
+			console.log(newProduct);
+		},
 	},
 });
 
-export const { addAPIProducts, editProductDetail, newPrice } =
+export const { addAPIProducts, editProductDetail, newPrice, createProduct } =
 	productSlice.actions;
 export default productSlice.reducer;
