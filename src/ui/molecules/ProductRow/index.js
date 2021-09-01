@@ -19,8 +19,6 @@ import { Link } from 'react-router-dom';
 const Index = (props) => {
 	const { row } = props;
 	const [open, setOpen] = React.useState(false);
-	let sorteDates = sortPrices(row.prices ?? []);
-	console.log(sorteDates);
 	const useRowStyles = makeStyles({
 		root: {
 			'& > *': {

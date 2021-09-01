@@ -26,7 +26,6 @@ export const productSlice = createSlice({
 			);
 			findPrice.price = Number(value);
 			findPrice.date = new Date().toISOString();
-			console.log(current(findPrice));
 		},
 		newPrice(state, action) {
 			const {
@@ -34,7 +33,7 @@ export const productSlice = createSlice({
 			} = action;
 			const price = Number(value);
 			const date = new Date().toISOString();
-			console.log(id, value);
+
 			const findProduct = state.data.find((product) => product.id === id);
 			findProduct.prices.push({ id: uuidv4(), price, date });
 		},

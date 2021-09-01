@@ -6,17 +6,22 @@ import Product from './pages/Product';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
+const routes = [
+	{ path: '/', component: <Home />, exact: true },
+	{ path: '/product/:productID', component: <Product />, exact: false },
+];
 const App = () => {
 	return (
 		<div className="App">
 			<QueryClientProvider client={queryClient}>
 				<Switch>
-					<Route path="/" exact>
-						<Home></Home>
-					</Route>
-					<Route path="/product/:productID">
-						<Product></Product>
-					</Route>
+					{routes.map((route) => {
+						return (
+							<Route path={route.path} exact={route.exact}>
+								{route.component}
+							</Route>
+						);
+					})}
 				</Switch>
 			</QueryClientProvider>
 		</div>
