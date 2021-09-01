@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from '../../ui/atoms/Loader';
 import Error from '../../ui/atoms/Error';
-import ProductsTable from '../../ui/organisms/ProductsTable';
+import Products from '../../ui/organisms/products';
 
 import { useQuery } from 'react-query';
 
@@ -16,7 +16,7 @@ const Index = () => {
 		return <Error></Error>;
 	}
 
-	return <ProductsTable products={data}>data</ProductsTable>;
+	return <Products products={data}>data</Products>;
 };
 
 export default Index;
