@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from '../../ui/atoms/Loader';
 import Error from '../../ui/atoms/Error';
-import Products from '../../ui/organisms/products';
+import Products from '../../ui/organisms/Products';
 
 import { useQuery } from 'react-query';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { addAPIProducts } from '../../../slices/product.js';
-import { useDispatch, useSelector } from 'react-redux';
-import ProductsTable from '../../molecules/productsTable';
+import { useDispatch } from 'react-redux';
+import ProductsTable from '../../molecules/ProductsTable';
 
 const Index = ({ products }) => {
 	const dispatch = useDispatch();

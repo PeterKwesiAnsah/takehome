@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const productSlice = createSlice({
 	name: 'products',
@@ -12,8 +12,14 @@ export const productSlice = createSlice({
 			} = action;
 			state.data = products;
 		},
+		editProductDetail(state, action) {
+			const {
+				payload: { type, value, id },
+			} = action;
+			console.log(type, value, id);
+		},
 	},
 });
 
-export const { addAPIProducts } = productSlice.actions;
+export const { addAPIProducts, editProductDetail } = productSlice.actions;
 export default productSlice.reducer;

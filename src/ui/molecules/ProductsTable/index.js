@@ -5,10 +5,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Row from '../productRow';
-import { useDispatch, useSelector } from 'react-redux';
+import Row from '../ProductRow';
+import { useSelector } from 'react-redux';
 import './index.css';
 
 export default function CollapsibleTable() {
@@ -20,8 +19,9 @@ export default function CollapsibleTable() {
 				<TableHead>
 					<TableRow>
 						<TableCell />
-						<TableCell>Product ID</TableCell>
-						<TableCell align="right">Product Name</TableCell>
+						<TableCell align="left">Product ID</TableCell>
+						<TableCell align="left">Product Name</TableCell>
+						<TableCell>Action </TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
