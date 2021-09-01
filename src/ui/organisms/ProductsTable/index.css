@@ -1,0 +1,22 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+
+	--primary: #1c345d;
+	--secondary: #8898aa;
+}
+
+thead {
+	background-color: #f6f9fc;
+}
+
+td,
+th {
+	border: 1px solid #e9ecef;
+	text-align: left;
+	padding: 8px;
+}
+
+td {
+	color: var(--primary);
+}

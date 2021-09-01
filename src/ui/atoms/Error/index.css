@@ -1,0 +1,6 @@
+.error-container {
+	display: grid;
+	place-items: center;
+	color: var(--danger);
+	font-weight: 600;
+}
